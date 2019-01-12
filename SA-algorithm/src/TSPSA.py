@@ -22,7 +22,7 @@ global index_accepted #记录被接收状态的横坐标
 INIT_TEMP = 100 # 初温
 RATE = 0.98 # 降温速率
 ITERATION_NUM = 500 # 每轮迭代次数
-OPTIMAL_SOLUTION = 15780 # TSP问题最优解
+OPTIMAL_SOLUTION = 6528 # TSP问题最优解
 
 #计算路径中一个城市与相邻两个城市的距离之和，为了方便交换的时候的计算
 #index 要计算的城市在路径中的索引
@@ -104,7 +104,7 @@ def init():
     global path
     global distance
     # 载入TSP问题数据（load_problem 需要指定一个 distance function）
-    problem = tsplib95.load_problem("../data/d198.tsp", special=cal_distance)
+    problem = tsplib95.load_problem("../data/ch150.tsp", special=cal_distance)
     # 初始化变量
     dimension = problem.dimension
     generate_matrix()
@@ -170,7 +170,7 @@ def main():
     print('该问题已找到的最优解：{0}'.format(OPTIMAL_SOLUTION))
     print('误差：%.2f%%' % (100 * (distance - OPTIMAL_SOLUTION) / OPTIMAL_SOLUTION))
     #提供可视化
-    generate_picture()
+    #generate_picture()
 
 '''
 # 生成分析图图
